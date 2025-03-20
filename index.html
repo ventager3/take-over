@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Theme</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Share Tech Mono', monospace;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .glitch {
+            font-size: 3rem;
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+            animation: glitch 1s infinite;
+        }
+
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.8;
+        }
+
+        .glitch::before {
+            color: #0f0;
+            transform: translate(-2px, -2px);
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitchEffect 2s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            color: #0f0;
+            transform: translate(2px, 2px);
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitchEffect 2s infinite linear alternate;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        @keyframes glitchEffect {
+            0% { clip: rect(10px, 550px, 90px, 0); }
+            50% { clip: rect(60px, 550px, 140px, 0); }
+            100% { clip: rect(110px, 550px, 190px, 0); }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            opacity: 0.8;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="glitch" data-text="Testing By Ventager">Testing By Ventager</div>
+    <div class="subtitle">Bug Hunter</div>
+</body>
+</html>
